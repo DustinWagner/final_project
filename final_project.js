@@ -1,6 +1,98 @@
 var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
+var character = makeImage("http://imi.ulximg.com/image/740x493/gallery/1489770127_03029ab3760a63164b237991efdc6c3c.jpg/2eacdb3c5840b7167df46f8d2bf06ba8/1489770127_3fc40182fc2216f3c00ac1a279595925.jpg",50,60,50,50)
+
+var Obstacle1 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",40,120,60,60)
+
+
+var Obstacle2 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",30,30,100,100)
+
+
+var Obstacle3 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",150,100,150,120)
+
+
+var Obstacle4 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",150,-50,250,100)
+
+function animateObstacle(){
+  var oneX=getX(Obstacle1)
+  var twoX=getX(Obstacle2)
+  var threeX=getX(Obstacle3)
+  var fourX=getX(Obstacle4)
+  var y=getY(character)
+ if (y< 180){
+   move(character,0,1)
+ }
+
+  move(Obstacle1,-1,0)
+  move(Obstacle2,-1,0)
+  move(Obstacle3,-1,0)
+  move(Obstacle4,-1,0)
+  if(oneX < -1 ){
+    setX(Obstacle1,300)
+  }if(twoX < -1 ){
+    setX(Obstacle2,300)
+  }if(threeX < -1 ){
+    setX(Obstacle3,300)
+  }if(fourX < -1 ){
+    setX(Obstacle4,300)
+  }
+  if(collides(character,Obstacle1) || collides(character,Obstacle2) || collides(character,Obstacle3) || collides(character,Obstacle4)){
+   makeText("Game Over",150,50,30,"VT323","#008080")
+  score = score+1}
+
+    requestAnimationFrame(animateObstacle)
+}
+
+
+
+addEventListener("keydown",moveCharacter)
+function moveCharacter(event){
+  var x = getX(character)
+  var y = getY(character)
+  if(event.key == "ArrowLeft"&& x > 0)
+    {
+      move(character,-10,0)
+    }else if(event.key == "ArrowRight"&& x < 260)
+      {
+        move(character,10,0)
+      }else if(event.key == "ArrowUp"&& y > 0)
+      {
+        move(character,0,-10)
+      }else if(event.key == "ArrowDown"&& y < 130)
+      {
+        move(character,0,10)
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
@@ -70,7 +162,7 @@ function setY(shape, y) {
     var yDiff = parseFloat(shape.getAttribute("y2")) - parseFloat(shape.getAttribute("y1"))
     shape.setAttribute("y1", y)
     shape.setAttribute("y2", y + yDiff)
-  } 
+  }
 }
 
 function move(shape, dx, dy) {
@@ -108,7 +200,7 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("r", r)
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(circle)
   return circle
@@ -122,7 +214,7 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("height", height)
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(rect)
   return rect
@@ -136,7 +228,7 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("ry", ry)
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(ellipse)
   return ellipse
@@ -151,7 +243,7 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke", stroke)
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(line)
   return line
@@ -164,7 +256,7 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("stroke-width", strokeWidth)
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polyline)
   return polyline
@@ -175,7 +267,7 @@ function makePolygon(points, fill, opacity) {
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polygon)
   return polygon
@@ -190,7 +282,7 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("font-family", fontFamily)
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(text)
   return text
@@ -204,7 +296,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("width", width)
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(image)
   return image
@@ -221,7 +313,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  
+
   var xMin, xMax, yMin, yMax
   if (shape2.hasAttribute("x")) {
     xMin = getX(shape2)
@@ -246,7 +338,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  return (centerX > xMin && 
+  return (centerX > xMin &&
           centerX < xMax &&
          centerY > yMin &&
          centerY < yMax)

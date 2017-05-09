@@ -1,0 +1,15 @@
+body {
+   background-image: url("http://vignette1.wikia.nocookie.net/destinypedia/images/4/4e/Trademark-Confirms-Bungie-Destiny.jpg/revision/latest?cb=20131219001817");
+  min-width: 650px;
+}
+
+svg {
+  background: url("http://resource.destinywalkthrough.com/library/2014/1412687212travelers_walk.jpg");
+  background-size: auto 100%;
+  display: block;
+  margin: auto;
+}
+button{
+  border-radius:12px;
+    font-family:VT323;
+}
