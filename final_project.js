@@ -1,18 +1,18 @@
-var namespace = "http://www.w3.org/2000/svg"
+mvar namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
-var character = makeImage("http://imi.ulximg.com/image/740x493/gallery/1489770127_03029ab3760a63164b237991efdc6c3c.jpg/2eacdb3c5840b7167df46f8d2bf06ba8/1489770127_3fc40182fc2216f3c00ac1a279595925.jpg",50,60,50,50)
+var character = makeImage("https://img.clipartfox.com/4fb21dce8fb52f8c517aaf9dfb2dc92c_-destiny-warlock-destiny-warlock-clipart_1000-1400.jpeg",10,10,50,50)
 
-var Obstacle1 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",40,120,60,60)
-
-
-var Obstacle2 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",30,30,100,100)
+var Obstacle1 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",120,70,70,60)
 
 
-var Obstacle3 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",150,100,150,120)
+var Obstacle2 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",120,30,70,60)
 
 
-var Obstacle4 = makeImage("http://www.clker.com/cliparts/8/0/e/1/1216139706833479705lemmling_Cartoon_speaker.svg.hi.png",150,-50,250,100)
+var Obstacle3 = makeImage("")
+
+
+var Obstacle4 = makeImage("")
 
 function animateObstacle(){
   var oneX=getX(Obstacle1)
