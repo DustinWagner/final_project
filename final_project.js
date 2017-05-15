@@ -3,16 +3,16 @@ mvar namespace = "http://www.w3.org/2000/svg"
 // Write your code here!
 var character = makeImage("https://img.clipartfox.com/4fb21dce8fb52f8c517aaf9dfb2dc92c_-destiny-warlock-destiny-warlock-clipart_1000-1400.jpeg",10,10,50,50)
 
-var Obstacle1 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",120,70,70,60)
+var Obstacle1 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",10,70,70,60)
 
 
-var Obstacle2 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",120,30,70,60)
+var Obstacle2 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",10,30,70,60)
 
 
-var Obstacle3 = makeImage("")
+var Obstacle3 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",10,30,80,60)
 
 
-var Obstacle4 = makeImage("")
+var Obstacle4 = makeImage("https://www.destinypedia.com/images/thumb/0/0e/Destiny-CabalColossus.jpg/250px-Destiny-CabalColossus.jpg",10,30,90,60)
 
 function animateObstacle(){
   var oneX=getX(Obstacle1)
